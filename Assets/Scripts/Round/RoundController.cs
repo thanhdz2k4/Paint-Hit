@@ -18,8 +18,7 @@ public class RoundController : MonoBehaviour
     List<GameObject> listOfRounds = new List<GameObject>();
 
     private int countRound = 0;
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         stackRound = GetComponent<StackRound>();
         spawnRound = GetComponent<SpawnRound>();

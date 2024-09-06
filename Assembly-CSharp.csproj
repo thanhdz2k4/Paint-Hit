@@ -65,9 +65,11 @@
     <Compile Include="Assets\Scripts\Level\LevelHandler.cs" />
     <Compile Include="Assets\Scripts\Color\ColorHandler.cs" />
     <Compile Include="Assets\Scripts\BG\BackgroundUI.cs" />
+    <Compile Include="Assets\Scripts\UI\UIHandler.cs" />
     <Compile Include="Assets\Scripts\Color\ColorChanger.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnRound.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnBall.cs" />
+    <Compile Include="Assets\Scripts\GameHandler\GameHandler.cs" />
     <Compile Include="Assets\Scripts\Round\RoundController.cs" />
     <Compile Include="Assets\Scripts\Move\StackRound.cs" />
   </ItemGroup>

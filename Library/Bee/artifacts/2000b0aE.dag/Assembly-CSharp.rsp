@@ -342,6 +342,7 @@
 "Assets/Scripts/BG/BackgroundUI.cs"
 "Assets/Scripts/Color/ColorChanger.cs"
 "Assets/Scripts/Color/ColorHandler.cs"
+"Assets/Scripts/GameHandler/GameHandler.cs"
 "Assets/Scripts/Hurdlers/MakeHurdlers.cs"
 "Assets/Scripts/Level/LevelHandler.cs"
 "Assets/Scripts/Move/StackRound.cs"
@@ -349,6 +350,7 @@
 "Assets/Scripts/Round/RoundController.cs"
 "Assets/Scripts/Spawn/SpawnBall.cs"
 "Assets/Scripts/Spawn/SpawnRound.cs"
+"Assets/Scripts/UI/UIHandler.cs"
 -langversion:9.0
 
 /deterministic

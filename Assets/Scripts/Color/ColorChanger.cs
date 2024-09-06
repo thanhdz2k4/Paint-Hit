@@ -25,6 +25,7 @@ public class ColorChanger : MonoBehaviour
         {
             collision.gameObject.GetComponent<MeshRenderer>().enabled = true;
             collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+            Destroy(base.gameObject);
             print("game over");
             
 

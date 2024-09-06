@@ -34,13 +34,13 @@ public class LevelHandler : MonoBehaviour
         }
 
         UpgradeLevel();
-
+        hearts = 6;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        hearts = 6;
+       
 
     }
 
@@ -61,6 +61,7 @@ public class LevelHandler : MonoBehaviour
         {
             if (currentLevel >= 1 && currentLevel < 2)
             {
+                
                 ballCounts = 2;
                 totalCircles = 2;
 
@@ -68,6 +69,7 @@ public class LevelHandler : MonoBehaviour
 
             if (currentLevel >= 2 && currentLevel < 6)
             {
+               
                 ballCounts = 7;
                 totalCircles = 3;
             }
