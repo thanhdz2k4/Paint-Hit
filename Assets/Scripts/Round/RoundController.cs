@@ -16,6 +16,8 @@ public class RoundController : MonoBehaviour
 
     [SerializeField]
     List<GameObject> listOfRounds = new List<GameObject>();
+
+    private int countRound = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +30,9 @@ public class RoundController : MonoBehaviour
     {
         GameObject newRound = spawnRound.Spawn();
         listOfRounds.Add(newRound);
-        MakeHurdlers(newRound);
+        MakeHurdlers(newRound, countRound);
         StackRounds(listOfRounds);
+        countRound++;
     }
 
     private void StackRounds(List<GameObject> listOfRounds)
@@ -40,8 +43,8 @@ public class RoundController : MonoBehaviour
         }
     }
 
-    private void MakeHurdlers(GameObject round)
+    private void MakeHurdlers(GameObject round, int index)
     {
-        makeHurdlers.MakeHurdler(round);
+        makeHurdlers.MakeHurdler(round, index);
     }
 }
