@@ -10,7 +10,7 @@ public class StackRound : MonoBehaviour
     [SerializeField]
     float unitToMoveY;
     
-    public void StackRounds(GameObject obj)
+    public void Stack(GameObject obj)
     {
         obj.transform.DOMoveY(unitToMoveY, speed).SetEase(Ease.OutElastic).SetRelative();
     }
