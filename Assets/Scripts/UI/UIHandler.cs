@@ -108,6 +108,9 @@ public class UIHandler : MonoBehaviour
         this.SuccessMiniScreen.SetActive(true);
     }
 
+
+   
+
     public void ActiveButtonSpawnBall(bool isActive)
     {
         this.buttonSpawnBall.SetActive(isActive);

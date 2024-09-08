@@ -18,6 +18,9 @@ public class GameHandler : MonoBehaviour
     ColorHandler colorHandler;
 
     [SerializeField]
+    AudioHandler audioHandler;
+
+    [SerializeField]
     ParticleSystem vfxSplash;
 
 
@@ -97,6 +100,7 @@ public class GameHandler : MonoBehaviour
             UIHandler.ActiveFailScreen(true);
             LevelHandler.Instance.FailGame();
             LevelHandler.Instance.UpgradeLevel();
+            
             ResetLevel();
         }
         

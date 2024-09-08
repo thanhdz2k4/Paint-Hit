@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\BG\BackgroundUI.cs" />
     <Compile Include="Assets\Scripts\UI\UIHandler.cs" />
     <Compile Include="Assets\Scripts\Color\ColorChanger.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioHandler.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnRound.cs" />
     <Compile Include="Assets\Scripts\Spawn\SpawnBall.cs" />
     <Compile Include="Assets\Scripts\GameHandler\GameHandler.cs" />
