@@ -31,8 +31,9 @@ public class LevelHandler : MonoBehaviour
         {
             PlayerPrefs.SetInt("fistTime", 1);
             PlayerPrefs.SetInt("Level", 1);
+            
         }
-
+        currentLevel = PlayerPrefs.GetInt("Level");
         UpgradeLevel();
         hearts = 6;
     }
@@ -44,18 +45,49 @@ public class LevelHandler : MonoBehaviour
 
     }
 
+    public void MinusHeart()
+    {
+        hearts--;
+    }
+
+    public void SetHartLevel()
+    {
+        this.isHardLevel = true;
+    }
+
+    public void SetEasyLevel()
+    {
+        this.isHardLevel = false;
+    }
 
     public void FailGame()
     {
         PlayerPrefs.SetInt("Level", 1);
         hearts = 6;
-        UpgradeLevel();
+        currentLevel = 1;
+        //UpgradeLevel();
+    }
+
+    public void NextLevel()
+    {
+        currentLevel++;
+        PlayerPrefs.SetInt("Level", currentLevel);
+        if (isHardLevel)
+        {
+            PlayerPrefs.SetInt("HardLevel", currentLevel);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("EasyLevel", currentLevel);
+            Debug.Log(" PlayerPrefs.SetInt(CurrentLevel) " + currentLevel);
+        }
+
     }
 
 
     public void UpgradeLevel()
     {
-        currentLevel = PlayerPrefs.GetInt("Level");
+        
 
         if (!isHardLevel)
         {

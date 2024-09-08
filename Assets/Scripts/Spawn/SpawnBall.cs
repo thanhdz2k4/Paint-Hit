@@ -14,13 +14,26 @@ public class SpawnBall : MonoBehaviour
     Vector3 positionSpawn;
 
     [SerializeField]
+    Vector3 positionSpawnInHardLevel;
+
+    [SerializeField]
     Vector3 direction;
 
     public GameObject Spawn()
     {
-        GameObject newBall = Instantiate<GameObject>(prefab, positionSpawn, Quaternion.identity);
-        newBall.GetComponent<Rigidbody>().AddForce(direction * speed, ForceMode.Impulse);
-        return newBall;
+        if(LevelHandler.Instance.isHardLevel)
+        {
+            GameObject newBall = Instantiate<GameObject>(prefab, positionSpawnInHardLevel, Quaternion.identity);
+            newBall.GetComponent<Rigidbody>().AddForce(direction * speed, ForceMode.Impulse);
+            return newBall;
+        } else
+        {
+            GameObject newBall = Instantiate<GameObject>(prefab, positionSpawn, Quaternion.identity);
+            newBall.GetComponent<Rigidbody>().AddForce(direction * speed, ForceMode.Impulse);
+            return newBall;
+        }
+        
+        
 
     }
 }

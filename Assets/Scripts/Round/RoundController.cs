@@ -17,6 +17,10 @@ public class RoundController : MonoBehaviour
     [SerializeField]
     List<GameObject> listOfRounds = new List<GameObject>();
 
+    [SerializeField]
+    ColorHandler colorHandler;
+
+    [SerializeField]
     private int countRound = 0;
     private void Awake()
     {
@@ -29,17 +33,52 @@ public class RoundController : MonoBehaviour
     {
         GameObject newRound = spawnRound.Spawn();
         listOfRounds.Add(newRound);
-        MakeHurdlers(newRound, countRound);
+        MakeHurdlers(newRound, countRound);  
         StackRounds(listOfRounds);
         countRound++;
+        
+    }
+
+    public void SetColorInCurrentRound()
+    {
+        if(!LevelHandler.Instance.isHardLevel)
+        {
+            listOfRounds[countRound - 1].transform.GetChild(24).gameObject.GetComponent<MeshRenderer>().material.color = colorHandler.currentColor;
+        }
+        
+    }
+
+    public void PauseTween()
+    {
+        if (!LevelHandler.Instance.isHardLevel)
+        {
+            listOfRounds[countRound - 1].GetComponent<CircleRotate>().StopRotate();
+
+        }
+        
+    }
+
+    public void DeleleAllRound()
+    {
+        countRound = 0;
+        foreach(var obj in listOfRounds)
+        {
+            Destroy(obj);
+        }
+        listOfRounds = new List<GameObject>();
     }
 
     private void StackRounds(List<GameObject> listOfRounds)
     {
-        foreach(var obj in listOfRounds)
+        if(!LevelHandler.Instance.isHardLevel)
         {
-            stackRound.Stack(obj);
+            foreach (var obj in listOfRounds)
+            {
+                stackRound.Stack(obj);
+            }
+
         }
+        
     }
 
     private void MakeHurdlers(GameObject round, int index)

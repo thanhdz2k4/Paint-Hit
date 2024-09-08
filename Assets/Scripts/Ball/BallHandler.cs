@@ -6,6 +6,9 @@ public class BallHandler : MonoBehaviour
 {
     [SerializeField]
     SpawnBall spawnBall;
+
+    [SerializeField]
+    ColorHandler colorHandler;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +27,6 @@ public class BallHandler : MonoBehaviour
     public void SpawnBall()
     {
         spawnBall.Spawn();
+        
     }
 }

@@ -18,6 +18,7 @@ public class MakeHurdlers : MonoBehaviour
     public void MakeHurdler(GameObject round, int index)
     {
         colorOfHurdler = colorHandler.currentColorArray[index];
+        colorHandler.currentColor = colorHandler.currentColorArray[index];
         int numberOfHurdles = Random.Range(1, maxOfNumberHurdler);
 
         List<int> hurdlesList = new List<int>();

@@ -15,6 +15,8 @@ public class ColorHandler : MonoBehaviour
 
     public Color[] currentColorArray { get; private set; }
 
+    public Color currentColor;
+
     private void OnEnable()
     {
         ChangeColor();
@@ -22,7 +24,7 @@ public class ColorHandler : MonoBehaviour
 
     public void ChangeColor()
     {
-        int randomC = Random.Range(0, 2);
+        int randomC = Random.Range(0, 3);
 
         if (randomC == 0)
             currentColorArray = color1;

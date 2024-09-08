@@ -6,10 +6,15 @@ public class ColorChanger : MonoBehaviour
 {
     [SerializeField]
     BallHandler ballHandler;
+
+    ColorHandler colorHandler;
     // Start is called before the first frame update
     void Start()
     {
         ballHandler = FindAnyObjectByType<BallHandler>();
+        colorHandler = FindAnyObjectByType<ColorHandler>();
+
+        gameObject.GetComponent<MeshRenderer>().material.color = colorHandler.currentColor;
     }
 
     // Update is called once per frame
@@ -25,6 +30,13 @@ public class ColorChanger : MonoBehaviour
         {
             collision.gameObject.GetComponent<MeshRenderer>().enabled = true;
             collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+            UIHandler uIHandler = FindAnyObjectByType<UIHandler>();
+            uIHandler.UpdateHeartUI();
+            if(uIHandler != null)
+            {
+                Debug.Log("uihandler != null");
+            }
+            LevelHandler.Instance.MinusHeart();
             Destroy(base.gameObject);
             print("game over");
             
@@ -36,7 +48,7 @@ public class ColorChanger : MonoBehaviour
             collision.gameObject.name = "color";
             collision.gameObject.tag = "red";
             collision.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
+            collision.gameObject.GetComponent<MeshRenderer>().material.color = colorHandler.currentColor;
             Destroy(base.gameObject);
         }
 
